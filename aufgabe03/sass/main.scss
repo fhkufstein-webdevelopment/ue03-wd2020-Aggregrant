@@ -1,6 +1,6 @@
 @charset "utf-8";
 @import "compass/reset";
-//sollte diese folgende Zeile zu einer Fehlermeldung führen - kommentieren Sie die folgende und die obere Zeile aus und kommentieren Sie die nachfolgende ein
+/*sollte diese folgende Zeile zu einer Fehlermeldung führen - kommentieren Sie die folgende und die obere Zeile aus und kommentieren Sie die nachfolgende ein*/
 @import "compass/css3";
 
 
@@ -11,21 +11,31 @@
 
 .btn {
     /* TODO */
-
+    @include transition-property(padding);
+    @include transition-duration(600ms);
+    @include transition-delay(500ms);
+    @include transition-timing-function(linear);
     &.ease-in {
         /* TODO */
+        @include transition-duration(1s);
+        @include transition-timing-function(ease-in);
     }
 
     &.ease-out {
         /* TODO */
+        @include transition-duration(1s);
+        @include transition-timing-function(ease-out);
     }
 
     &.ease-in-out {
         /* TODO */
+        @include transition-duration(1s);
+        @include transition-timing-function(ease-in-out);
     }
 
     &.green {
         /* TODO */
+        @include transition-property(all);
     }
 
     &.animation {
@@ -37,6 +47,11 @@
         animation-timing-function: linear;
     }
 }
+/*Mit duration bestimme ich die Dauer der Animation, mit delay, wie lange
+diese verzögert ist, wann sie beginnt, bezüglich property und transition-timing-function bin ich mir persönlich nicht ganz so sicher.
+Ich könnte mir vorstellen, dass mit timing function definiert wird, wie die Schnelligkeit der Animation abläuft. Bezüglich 3b) Könnten Sie das bitte
+uns erklären, da wir mit Animationen so gut wir gar nichts gemacht haben.
+ */
 
 body:hover .animation {
     animation-name:myanimation2;
